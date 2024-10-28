@@ -387,6 +387,8 @@ while True:
         cv2.line(frame, line[0], line[1], color, 5)
 
     # Display the resulting frame
+    cv2.namedWindow("Motion Tracking", cv2.WND_PROP_FULLSCREEN)
+    cv2.setWindowProperty("Motion Tracking", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
     cv2.imshow('Motion Tracking', cv2.flip(frame, 1))
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
