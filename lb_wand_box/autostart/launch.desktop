@@ -1,0 +1,20 @@
+[Desktop Entry]
+Type=Application
+
+#Exec=lxterminal -e /home/leftbrain/run-main.sh
+#Exec=bash /home/leftbrain/run-main.sh
+#Exec=lxterminal -e python /home/leftbrain/button_listener.py
+
+#Exec=bash -c "sleep 30 && source /home/leftbrain/Documents/src/.venv/bin/activate && python /home/leftbrain/Documents/src/lb_wand_box/SVM_Model/run_main.py"
+
+#Exec=lxterminal -e bash echo "Hi!"
+#Exec=lxterminal -e bash -c "source /home/leftbrain/.bashrc && bash launch.sh"
+
+Exec=bash -c "source /home/leftbrain/Documents/src/.venv/bin/activate && lxterminal -e bash -c 'echo Hi!' && bash launch.sh && python /home/leftbrain/button_listener.py"
+
+
+Hidden=false
+NoDisplay=false
+#X-GNOME-Autostart-enabled=true
+Name=lb_wand_box start ..
+#Comment=Potter Box Launch Script

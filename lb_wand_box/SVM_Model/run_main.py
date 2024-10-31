@@ -1,3 +1,5 @@
+#!/home/leftbrain/Documents/.venv/bin/python
+
 import cv2
 import os
 import numpy as np
@@ -18,14 +20,14 @@ picam2.configure(picam2.create_video_configuration(main={"size": (640, 480)}))
 picam2.start()
 
 # Update model paths
-model_path = '/home/leftbrain/Documents/src/lb_wand_box/SVM Model/svm_model_data_gen_rbpi.pkl'  # Updated extension to .pkl
-label_encoder_path = '/home/leftbrain/Documents/src/lb_wand_box/SVM Model/label_encoder.pkl'
+model_path = '/home/leftbrain/Documents/src/lb_wand_box/SVM_Model/svm_model_data_gen_rbpi.pkl'  # Updated extension to .pkl
+label_encoder_path = '/home/leftbrain/Documents/src/lb_wand_box/SVM_Model/label_encoder.pkl'
 test_img_path = '/home/leftbrain/Desktop/Raspberry_Potter/temp/current_img_to_review.jpg'
 output_folder = "/home/leftbrain/Desktop/Raspberry_Potter/temp"
 
 os.makedirs(output_folder, exist_ok=True)
 
-# Load the scikit-learn SVM model and label encoder
+# Load the scikit-learn SVM_Model and label encoder
 svm = joblib.load(model_path)
 le = joblib.load(label_encoder_path)
 
@@ -153,12 +155,12 @@ def preprocess_image(img_path, target_size=(100, 100)):
 
     return hog_desc
 
-# # Load the pre-trained SVM model and predict the label
+# # Load the pre-trained SVM_Model and predict the label
 # def predict_image():
 #     # Preprocess the image to get HOG features
 #     hog_features = preprocess_image(test_img_path)
 
-#     # Use the scikit-learn SVM model for prediction
+#     # Use the scikit-learn SVM_Model for prediction
 #     # Get probability estimates for confidence tracking
 #     probabilities = svm.predict_proba(hog_features)
 #     max_prob = np.max(probabilities)
@@ -179,7 +181,7 @@ def predict_image():
     # Preprocess the image to get HOG features
     hog_features = preprocess_image(test_img_path, target_size=(100, 100))  # Adjust target_size if necessary
 
-    # Use the scikit-learn SVM model for prediction
+    # Use the scikit-learn SVM_Model for prediction
     # Get probability estimates for confidence tracking
     probabilities = svm.predict_proba(hog_features)[0]  # Get the first (and only) sample's probabilities
     max_prob = np.max(probabilities)

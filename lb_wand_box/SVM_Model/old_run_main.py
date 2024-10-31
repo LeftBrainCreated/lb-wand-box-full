@@ -13,8 +13,8 @@ picam2 = Picamera2()
 picam2.configure(picam2.create_video_configuration(main={"size": (640, 480)}))
 picam2.start()
 
-model_path = '/home/leftbrain/Documents/src/lb_wand_box/SVM Model/svm_model_data_gen_rbpi.yml'
-label_encoder = '/home/leftbrain/Documents/src/lb_wand_box/SVM Model/label_encoder.pkl'
+model_path = '/home/leftbrain/Documents/src/lb_wand_box/SVM_Model/svm_model_data_gen_rbpi.yml'
+label_encoder = '/home/leftbrain/Documents/src/lb_wand_box/SVM_Model/label_encoder.pkl'
 test_img_path = '/home/leftbrain/Desktop/Raspberry_Potter/temp/current_img_to_review.jpg'
 output_folder = "/home/leftbrain/Desktop/Raspberry_Potter/temp"
 
@@ -110,7 +110,7 @@ def preprocess_image(img_path):
     
     return hog_desc
 
-# Load the pre-trained SVM model and predict the label
+# Load the pre-trained SVM_Model and predict the label
 def predict_image():
     # Preprocess the image to get HOG features
     hog_features = preprocess_image(test_img_path)

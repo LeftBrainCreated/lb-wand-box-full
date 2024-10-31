@@ -17,7 +17,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 
-label_encoder = '/home/leftbrain/Documents/src/lb_wand_box/SVM Model/label_encoder.pkl'
+label_encoder = '/home/leftbrain/Documents/src/lb_wand_box/SVM_Model/label_encoder.pkl'
 
 #%% Functions
 
